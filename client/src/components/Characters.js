@@ -29,16 +29,10 @@ class  Characters extends Component {
         return(
             <div>
                 <div>
-                    <div className = "App">
-                        <header className = "App-header">
-                            <h1 className = "App-title">Characters</h1>
-                            <p className = "App-subtitle">Click to explore Characters!!</p>
-                        </header>
-                    </div>
 
                     <BrowserRouter>
                     <Switch>
-                        <Route exact path = "/api" render = {()=>list}/>
+                        <Route exact path = "/characters" render = {()=>list}/>
                         <Route path = '/api/characters/:id' component = {IndividualCharacterContainer}/>
                     </Switch>
                     </BrowserRouter>

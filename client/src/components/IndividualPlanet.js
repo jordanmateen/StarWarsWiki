@@ -8,7 +8,7 @@ class IndividualPlanet extends Component {
         //do something here later.
         let { loadPlanetInfo,loadPeople} = this.props
         let planetID = this.props.match.params.id
-        axios.get(`/api/planets/${planetID}`) //api/planets/:id
+        axios.get(`${planetID}`) //api/planets/:id
             .then( ({ data }) =>{
                 loadPlanetInfo(data)
                 let urls = data.residents.map( (url)=>{
@@ -16,7 +16,6 @@ class IndividualPlanet extends Component {
                 })
                 Promise.all(urls)
                     .then((data)=>{
-                        console.log(data, " this loads into loadPeople method")
                         let residentList = data.map( data =>{
                             return data.data.name
                         })
@@ -38,6 +37,7 @@ class IndividualPlanet extends Component {
         })
         return(
             <div>
+
                 <h1>{individualPlanet.name}</h1>
                 <div>
                     <p>Specifications:</p>

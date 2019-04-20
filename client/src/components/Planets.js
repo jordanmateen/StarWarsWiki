@@ -30,18 +30,19 @@ class Planets extends Component {
         })
         return(
             <div>
+                
+                    {/* <div className = "App">
+                            <header >
+                                <h1 >Planets</h1>
+                                <p>Click to explore Planets!!</p>
+                            </header>
+                    </div> */}
+                
                 <div>
-                <div className = "App">
-                        <header className = "App-header">
-                            <h1 className = "App-title">Planets</h1>
-                            <p className = "App-subtitle">Click to explore Planets!!</p>
-                        </header>
-                    </div>
-
                     <BrowserRouter>
                         <Switch>
-                            <Route exact path = '/' render ={()=>planetList}/>
-                            <Route path = '/:id' component = {IndividualPlanetContainer}/>
+                            <Route exact path = '/planets' render ={()=>planetList}/>
+                            <Route path = '/api/planets/:id' component = {IndividualPlanetContainer}/>
                         </Switch>
                     </BrowserRouter>
                 </div>
