@@ -6,7 +6,13 @@ let initialState = {
             gender : "getting data..."
         }],
     residents : [],
-    planets: [],
+    planets: [
+        {
+            name:"Retriving Data...",
+            population : "getting data...",
+            
+        }
+    ],
     individualCharacter : {},
     individualPlanet : {},
     homeworld: '',

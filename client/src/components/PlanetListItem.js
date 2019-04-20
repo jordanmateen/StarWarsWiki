@@ -6,7 +6,7 @@ class PlanetListItem extends Component {
     
   clickHandler =()=>{
     let { id } = this.props
-   this.props.history.push(`/${id}`)
+   this.props.history.push(`/api/planets/${id}`)
   } 
 
     render(){
