@@ -10,9 +10,11 @@ class  Characters extends Component {
     componentDidMount() {
         let { loadCharacters }  = this.props
         new Promise((resolve, reject) => {
-          Utils.getStarWarsData('/api/characters', [], resolve, reject)
+          Utils.getStarWarsData('api/characters', [], resolve, reject)
         }).then(response => {
+            console.log(response[0].starships)
             loadCharacters(response)
+
           })
       }
 
@@ -31,10 +33,10 @@ class  Characters extends Component {
                 <div>
 
                     <BrowserRouter>
-                    <Switch>
-                        <Route exact path = "/characters" render = {()=>list}/>
-                        <Route path = '/api/characters/:id' component = {IndividualCharacterContainer}/>
-                    </Switch>
+                        <Switch>
+                            <Route exact path = "/characters" render = {()=>list}/>
+                            <Route path = '/api/characters/:id/' component = {IndividualCharacterContainer}/>
+                        </Switch>
                     </BrowserRouter>
                 </div>
             </div>

@@ -1,28 +1,24 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-
 class PlanetListItem extends Component {
     
   clickHandler =()=>{
     let { id } = this.props
-   this.props.history.push(`/api/planets/${id}`)
+      this.props.history.push(`/api/planets/${id}`)
+      window.location.reload() 
   } 
 
     render(){
-      let { name , population } = this.props
+      let { name } = this.props
         return(
+          <div>
             <div onClick = {this.clickHandler.bind(this)}>
               <div>
               <h4>{name}</h4>
-              </div>
-
-              <div>
-                <p>Population: {population}</p>
-
-              </div>
-                
+              </div>   
             </div>
+          </div>
         )
     }
 }  

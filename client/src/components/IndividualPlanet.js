@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import ResidentList from './ResidentList'
-
+import CharacterListItem from './CharacterListItem'
+let characterIdList;
 class IndividualPlanet extends Component {
 
     componentDidMount(){
@@ -11,8 +11,16 @@ class IndividualPlanet extends Component {
         axios.get(`${planetID}`) //api/planets/:id
             .then( ({ data }) =>{
                 loadPlanetInfo(data)
+
                 let urls = data.residents.map( (url)=>{
                     return axios.get(url)
+                })
+                characterIdList = data.residents.map((url,i)=>{
+                    let idList = url.split('/')
+                    let id = idList[5]
+                    let characterId = parseInt(id,10)
+
+                    return characterId
                 })
                 Promise.all(urls)
                     .then((data)=>{
@@ -27,11 +35,12 @@ class IndividualPlanet extends Component {
     }
     render(){
 
+        console.log(characterIdList, 'look here')
         let { individualPlanet, people } = this.props
         let residents = people.map( (name,i) =>{
             return (
                 <div key = {i}>
-                 <ResidentList name = {name}/>
+                    <CharacterListItem id = {i = characterIdList[i]} name = {name}/>
                 </div>    
             ) 
         })
@@ -43,12 +52,12 @@ class IndividualPlanet extends Component {
                     <p>Specifications:</p>
                     <ul>
                         <li>Population: {individualPlanet.population}</li>
-                        <li>Diameter: {individualPlanet.diameter}</li>
-                        <li>Climate: {individualPlanet.climate}</li>
-                        <li>Gravity: {individualPlanet.gravity}</li>
-                        <li>Terrain: {individualPlanet.terrain}</li>
+                        <li>Diameter:   {individualPlanet.diameter}</li>
+                        <li>Climate:    {individualPlanet.climate}</li>
+                        <li>Gravity:    {individualPlanet.gravity}</li>
+                        <li>Terrain:    {individualPlanet.terrain}</li>
                     </ul>
-                   <p>Known Residents:</p>
+                   <h3>Known Residents:</h3>
                    {residents}
                 </div>
             </div>
