@@ -40,10 +40,12 @@ class IndividualCharacter extends Component{
             <div>
                 <h1>{individualCharacter.name}</h1>
                 <h3>Specifications: </h3>
-                <p>Birth Year: {individualCharacter.birth_year}</p>
-                <p>Gender :    {individualCharacter.gender}</p>
-                <p>Height :    {individualCharacter.height} centimeters</p>
-                <p>Species:    {species}</p>
+                <ul>
+                    <li><b>Birth Year: {individualCharacter.birth_year}</b></li>
+                    <li><b>Gender :    {individualCharacter.gender}</b></li>
+                    <li><b>Height :    {individualCharacter.height} centimeters</b></li>
+                    <li><b>Species:    {species}</b></li>
+                </ul>
                 <div>
                 <h4>Home World</h4>
                 

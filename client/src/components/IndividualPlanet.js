@@ -49,16 +49,16 @@ class IndividualPlanet extends Component {
 
                 <h1>{individualPlanet.name}</h1>
                 <div>
-                    <p>Specifications:</p>
+                    <h3>Specifications:</h3>
                     <ul>
-                        <li>Population: {individualPlanet.population}</li>
-                        <li>Diameter:   {individualPlanet.diameter}</li>
-                        <li>Climate:    {individualPlanet.climate}</li>
-                        <li>Gravity:    {individualPlanet.gravity}</li>
-                        <li>Terrain:    {individualPlanet.terrain}</li>
+                        <li><b>Population: {individualPlanet.population}</b></li>
+                        <li><b>Diameter:   {individualPlanet.diameter}</b></li>
+                        <li><b>Climate:    {individualPlanet.climate}</b></li>
+                        <li><b>Gravity:    {individualPlanet.gravity}</b></li>
+                        <li><b>Terrain:    {individualPlanet.terrain}</b></li>
                     </ul>
                    <h3>Known Residents:</h3>
-                   {residents}
+                   <p>{residents}</p>
                 </div>
             </div>
         )
