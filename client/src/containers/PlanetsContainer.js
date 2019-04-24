@@ -10,7 +10,8 @@ const mapStateToProps =(state)=>{
 
 const mapDispatchToProps = (dispatch)=>{
     return{
-        loadPlanets : (planets)=> dispatch({type: "GET_PLANETS", planets: planets})
+        loadPlanets : (planets)=> dispatch({type: "GET_PLANETS", planets: planets}),
+        
     }
 }
 

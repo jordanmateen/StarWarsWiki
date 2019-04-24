@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
+import { BrowserRouter, Switch , Route } from 'react-router-dom'
+import PlanetListItem from './PlanetListItem'
 import axios from 'axios';
-
+import IndividualPlanetContainer from '../containers/IndividualPlanetContainer';
+let planetCode;
 class IndividualCharacter extends Component{
 
-
+    
     componentDidMount(){
-
+        
         let characterID= this.props.match.params.id
+        
         let {loadCharacter , loadHomeWorldName, loadSpeciesName} = this.props
 
         axios.get(`${characterID}`)//api/characters/:id
@@ -16,7 +20,10 @@ class IndividualCharacter extends Component{
                 let speciesPromiseURL = axios.get(data.species)
                 return Promise.all([homeworldPromiseURL, speciesPromiseURL])
         }).then(( [homeworld , species] ) =>{
-            console.log(species.data.name)
+            let url = homeworld.data.url
+            let arr = url.split('/')
+            let id = arr[5]
+            planetCode = parseInt(id,10)
             loadHomeWorldName(homeworld.data.name)
             loadSpeciesName(species.data.name)
         }).catch(err=>{
@@ -24,21 +31,27 @@ class IndividualCharacter extends Component{
         })
     }
 
+
+
     render(){
-        let{ individualCharacter, homeworld, species} = this.props
-  
+        let{ individualCharacter, homeworld, species } = this.props
+
         return(
             <div>
                 <h1>{individualCharacter.name}</h1>
                 <h3>Specifications: </h3>
                 <p>Birth Year: {individualCharacter.birth_year}</p>
-                <p>Gender : {individualCharacter.gender}</p>
-                <p>Height : {individualCharacter.height} centimeters</p>
-                <p>Species: {species}</p>
+                <p>Gender :    {individualCharacter.gender}</p>
+                <p>Height :    {individualCharacter.height} centimeters</p>
+                <p>Species:    {species}</p>
                 <div>
-                <p>HomeWorld : {homeworld}</p>
+                <h4>Home World</h4>
+                
+                <PlanetListItem  name = {homeworld} id = {planetCode}/>
                 </div>
             </div>
+
+           
         )
     }
 }

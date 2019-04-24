@@ -9,7 +9,6 @@ let initialState = {
     planets: [
         {
             name:"Retriving Data...",
-            population : "getting data...",
             
         }
     ],
@@ -17,7 +16,7 @@ let initialState = {
     individualPlanet : {},
     homeworld: '',
     species: '',
-    people :[]
+    people :[],
     
 }
 
@@ -73,7 +72,6 @@ let reducer = (state = initialState, actions) => {
             ...state,
             people : residents
         }
-
         default:
         return {
             ...state
