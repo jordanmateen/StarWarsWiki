@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Switch , Route } from 'react-router-dom'
 import PlanetListItem from './PlanetListItem'
+import VehicleListItem from './VehicleListItem'
 import axios from 'axios';
-import IndividualPlanetContainer from '../containers/IndividualPlanetContainer';
+import { version } from 'punycode';
+
 let planetCode;
+// let ids;
 class IndividualCharacter extends Component{
 
     
@@ -15,7 +17,17 @@ class IndividualCharacter extends Component{
 
         axios.get(`${characterID}`)//api/characters/:id
             .then( ({ data }) =>{
+                console.log(data.vehicles)
                 loadCharacter(data)
+                // ids = data.vehicles.map((url,i)=>{
+                //     let splitUrl = url.split('/')
+                //     let id = splitUrl[5]
+                //     let vehicleCode = parseInt(id,10)
+
+                //     return vehicleCode
+                // })
+
+                // console.log(ids)
                 let homeworldPromiseURL = axios.get(data.homeworld)
                 let speciesPromiseURL = axios.get(data.species)
                 return Promise.all([homeworldPromiseURL, speciesPromiseURL])
@@ -36,6 +48,14 @@ class IndividualCharacter extends Component{
     render(){
         let{ individualCharacter, homeworld, species } = this.props
 
+        // let vehicleList = ids.map((id,i)=>{
+        //     return(
+        //         <div>
+        //             <VehicleListItem id = {id}/>
+        //         </div>
+        //     )
+        // })
+
         return(
             <div>
                 <h1>{individualCharacter.name}</h1>
@@ -48,9 +68,10 @@ class IndividualCharacter extends Component{
                 </ul>
                 <div>
                 <h4>Home World</h4>
-                
                 <PlanetListItem  name = {homeworld} id = {planetCode}/>
                 </div>
+
+                {/* {vehicleList} */}
             </div>
 
            

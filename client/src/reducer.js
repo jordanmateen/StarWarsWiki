@@ -5,7 +5,7 @@ let initialState = {
             birth_year : "getting data...",
             gender : "getting data..."
         }],
-    residents : [],
+    vehicles : [],
     planets: [
         {
             name:"Retriving Data...",
@@ -14,6 +14,7 @@ let initialState = {
     ],
     individualCharacter : {},
     individualPlanet : {},
+    individualVehicle : {},
     homeworld: '',
     species: '',
     people :[],
@@ -22,7 +23,7 @@ let initialState = {
 
 
 let reducer = (state = initialState, actions) => {
-    let { type, characters, character, homeworld, planets, species, planet , residents} = actions
+    let { type, characters, character, homeworld, planets, species, planet , people, vehicles, vehicle} = actions
 
     switch (type) {
         case "GET_CHARACTERS":
@@ -68,9 +69,21 @@ let reducer = (state = initialState, actions) => {
                 individualPlanet : planet
             }
         case "LOAD_PEOPLE" :
+            return{
+                ...state,
+                people : people
+            }
+
+        case "LOAD_STARSHIPS" :
+            return{
+                ...state,
+                vehicles : vehicles
+            }
+
+        case "GET_STARSHIP" : 
         return{
             ...state,
-            people : residents
+            individualVehicle : vehicle
         }
         default:
         return {
