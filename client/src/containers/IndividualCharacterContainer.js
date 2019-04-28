@@ -8,6 +8,7 @@ const mapStateToProps =(state)=>{
         homeworld : state.homeworld,
         species : state.species,
         planets : state.planets,
+        vehicles : state.vehicles
        
     }
 }
@@ -17,7 +18,8 @@ const mapDispatchtoProps =(dispatch)=>{
         loadCharacter : (character) =>dispatch({type: "LOAD_CHARACTER", character: character}),
         loadHomeWorldName : (homeworld) => dispatch ({type : "LOAD_HOMEWORLD_NAME", homeworld : homeworld}),
         loadSpeciesName : (species)=> dispatch({type: "LOAD_SPECIES_NAME", species : species}),
-        loadPlanets : (planets)=> dispatch({type: "GET_PLANETS", planets: planets})
+        loadPlanets : (planets)=> dispatch({type: "GET_PLANETS", planets: planets}),
+        loadVehicles : (vehicles) => dispatch({type : "LOAD_VEHICLES", vehicles: vehicles})
     }
 }
 
