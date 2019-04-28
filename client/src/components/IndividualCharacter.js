@@ -62,7 +62,10 @@ class IndividualCharacter extends Component{
         let vehicleList = vehicles.map((name,i)=>{
             return(
                 <div key ={i}>
-                    <VehicleListItem  name = {name} id = {ids[i]}/>
+                    <ul>
+                        <li><b><VehicleListItem  name = {name} id = {ids[i]}/></b></li>
+                    </ul>
+                    
                 </div>
             )
         })
@@ -79,7 +82,10 @@ class IndividualCharacter extends Component{
                 </ul>
                 <div>
                 <h4>Home World:</h4>
-                <PlanetListItem  name = {homeworld} id = {planetCode}/>
+                <ul>
+                    <li><b><PlanetListItem  name = {homeworld} id = {planetCode}/></b></li>
+                </ul>
+               
                 </div>
                 <h4>Vehicles:</h4>
                 {vehicleList}

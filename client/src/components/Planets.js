@@ -21,8 +21,8 @@ class Planets extends Component {
         let { planets } =this.props
         let planetList = planets.map( (planet, i)=>{
             return(
-                <div key = {i}>
-                    <PlanetListItem id = {i + 2} name = {planet.name}/>
+                <div key = {i} style = {{fontSize : '1.3em' }}>
+                   <b> <PlanetListItem id = {i + 2} name = {planet.name}/> </b>
                 </div>
             )
         })

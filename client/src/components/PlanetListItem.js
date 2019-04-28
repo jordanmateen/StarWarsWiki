@@ -15,7 +15,7 @@ class PlanetListItem extends Component {
           <div>
             <div onClick = {this.clickHandler.bind(this)}>
               <div>
-              <h4>{name}</h4>
+              <p>{name}</p>
               </div>   
             </div>
           </div>

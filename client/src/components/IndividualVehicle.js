@@ -46,7 +46,10 @@ class IndividualVehicle extends Component{
         let pilots = people.map( (name,i) =>{
             return (
                 <div key = {i}>
-                    <CharacterListItem id = {pilotList[i]} name = {name}/>
+                    <ul>
+                        <li><b><CharacterListItem id = {pilotList[i]} name = {name}/></b></li>
+                    </ul>
+                    
                 </div>    
             ) 
         })
