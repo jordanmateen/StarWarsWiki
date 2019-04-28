@@ -9,13 +9,13 @@ import IndividualCharacterContainer from './containers/IndividualCharacterContai
 import Dashboard from './components/Dashboard';
 import VehicleContainer from './containers/VehicleContainer'
 import IndividualVehicleContainer from './containers/IndividualVehicleContainer'
-import './App.css';
+import './styles/css/styles.css';
 
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div class = "background">
         <Navbar/>
         <Switch>
             <Route path = "/dashboard" component = {Dashboard}/>
