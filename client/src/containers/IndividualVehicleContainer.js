@@ -10,7 +10,7 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) =>{
     return{
-        loadVehicle : (vehicle)=>dispatch({type: "GET_STARSHIP", vehicle: vehicle}),
+        loadVehicle : (vehicle)=>dispatch({type: "GET_VEHICLE", vehicle: vehicle}),
         loadPeople : (people) =>dispatch({type: "LOAD_PEOPLE", people: people})
     }
         

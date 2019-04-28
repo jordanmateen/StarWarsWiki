@@ -12,13 +12,12 @@ let initialState = {
             
         }
     ],
+    people :[],
     individualCharacter : {},
     individualPlanet : {},
     individualVehicle : {},
     homeworld: '',
     species: '',
-    people :[],
-    
 }
 
 
@@ -74,13 +73,13 @@ let reducer = (state = initialState, actions) => {
                 people : people
             }
 
-        case "LOAD_STARSHIPS" :
+        case "LOAD_VEHICLES" :
             return{
                 ...state,
                 vehicles : vehicles
             }
 
-        case "GET_STARSHIP" : 
+        case "GET_VEHICLE" : 
         return{
             ...state,
             individualVehicle : vehicle

@@ -5,7 +5,7 @@ import axios from 'axios';
 import { version } from 'punycode';
 
 let planetCode;
-// let ids;
+let ids = [];
 class IndividualCharacter extends Component{
 
     
@@ -13,21 +13,30 @@ class IndividualCharacter extends Component{
         
         let characterID= this.props.match.params.id
         
-        let {loadCharacter , loadHomeWorldName, loadSpeciesName} = this.props
+        let {loadCharacter , loadHomeWorldName, loadSpeciesName, loadVehicles} = this.props
 
         axios.get(`${characterID}`)//api/characters/:id
             .then( ({ data }) =>{
-                console.log(data.vehicles)
+                // console.log(data.vehicles)
                 loadCharacter(data)
-                // ids = data.vehicles.map((url,i)=>{
-                //     let splitUrl = url.split('/')
-                //     let id = splitUrl[5]
-                //     let vehicleCode = parseInt(id,10)
+                let urls =[]
 
-                //     return vehicleCode
-                // })
+                ids = data.vehicles.map((url,i)=>{
+                    urls.push(axios.get(url))
+                    let splitUrl = url.split('/')
+                    let id = splitUrl[5]
+                    let vehicleCode = parseInt(id,10)
+                    return vehicleCode
+                })
 
-                // console.log(ids)
+                console.log(urls)
+                Promise.all(urls).then( data =>{
+                    let vehicleList = data.map((vehicles,i)=>{
+                        return vehicles.data.name
+                    })
+                    loadVehicles(vehicleList)
+                })
+                
                 let homeworldPromiseURL = axios.get(data.homeworld)
                 let speciesPromiseURL = axios.get(data.species)
                 return Promise.all([homeworldPromiseURL, speciesPromiseURL])
@@ -46,15 +55,17 @@ class IndividualCharacter extends Component{
 
 
     render(){
-        let{ individualCharacter, homeworld, species } = this.props
+        let{ individualCharacter, homeworld, species , vehicles} = this.props
 
-        // let vehicleList = ids.map((id,i)=>{
-        //     return(
-        //         <div>
-        //             <VehicleListItem id = {id}/>
-        //         </div>
-        //     )
-        // })
+        console.log(vehicles)
+
+        let vehicleList = vehicles.map((name,i)=>{
+            return(
+                <div key ={i}>
+                    <VehicleListItem  name = {name} id = {ids[i]}/>
+                </div>
+            )
+        })
 
         return(
             <div>
@@ -67,11 +78,11 @@ class IndividualCharacter extends Component{
                     <li><b>Species:    {species}</b></li>
                 </ul>
                 <div>
-                <h4>Home World</h4>
+                <h4>Home World:</h4>
                 <PlanetListItem  name = {homeworld} id = {planetCode}/>
                 </div>
-
-                {/* {vehicleList} */}
+                <h4>Vehicles:</h4>
+                {vehicleList}
             </div>
 
            
