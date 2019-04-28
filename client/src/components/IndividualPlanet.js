@@ -40,7 +40,10 @@ class IndividualPlanet extends Component {
         let residents = people.map( (name,i) =>{
             return (
                 <div key = {i}>
-                    <CharacterListItem id = {characterIdList[i]} name = {name}/>
+                    <ul>
+                        <li><b><CharacterListItem id = {characterIdList[i]} name = {name}/></b></li>
+                    </ul>
+                   
                 </div>    
             ) 
         })
@@ -58,7 +61,7 @@ class IndividualPlanet extends Component {
                         <li><b>Terrain:    {individualPlanet.terrain}</b></li>
                     </ul>
                    <h3>Known Residents:</h3>
-                   <p>{residents}</p>
+                   {residents}
                 </div>
             </div>
         )

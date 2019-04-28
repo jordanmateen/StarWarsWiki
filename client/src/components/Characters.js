@@ -21,8 +21,8 @@ class  Characters extends Component {
         let { characters } = this.props
         let list = characters.map((character, i) =>{
             return (
-                <div key ={i}>
-                    <CharacterListItem id = {i + 1} name = {character.name} birth_year = {character.birth_year} gender = {character.gender}/>
+                <div key ={i} style = {{fontSize : '1.3em' }}>
+                    <b><CharacterListItem id = {i + 1} name = {character.name} birth_year = {character.birth_year} gender = {character.gender}/></b>
                 </div>
             )      
         })

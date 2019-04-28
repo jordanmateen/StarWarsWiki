@@ -11,7 +11,7 @@ class VehicleListItem extends Component{
         let { name } =this.props
         return(
             <div onClick = {this.clickHandler.bind(this)}>
-                <h4>{name}</h4>
+                <p>{name}</p>
             </div>
         )
     }

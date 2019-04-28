@@ -35,8 +35,8 @@ class Starships extends Component{
 
         let vehiclesList = vehicles.map( (vehicle,i)=>{
             return(
-                <div key ={i}>  
-                    <VehicleListItem id = {vehicleCode[i]} name = {vehicle.name}/>
+                <div key ={i} style = {{fontSize : '1.3em' }}>  
+                    <b><VehicleListItem id = {vehicleCode[i]} name = {vehicle.name}/></b>
                 </div>
             )
         })
