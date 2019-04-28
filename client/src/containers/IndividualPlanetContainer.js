@@ -12,7 +12,7 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) =>{
     return{
         loadPlanetInfo : (planet)=> dispatch({type: "LOAD_PLANET", planet : planet}),
-        loadPeople : (residents)=> dispatch({type: "LOAD_PEOPLE", residents: residents})
+        loadPeople : (people)=> dispatch({type: "LOAD_PEOPLE", people: people})
     }
 }
 export default connect(

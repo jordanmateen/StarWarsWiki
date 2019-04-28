@@ -40,7 +40,7 @@ class IndividualPlanet extends Component {
         let residents = people.map( (name,i) =>{
             return (
                 <div key = {i}>
-                    <CharacterListItem id = {i = characterIdList[i]} name = {name}/>
+                    <CharacterListItem id = {characterIdList[i]} name = {name}/>
                 </div>    
             ) 
         })

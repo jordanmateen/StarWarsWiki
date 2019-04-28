@@ -12,7 +12,6 @@ class  Characters extends Component {
         new Promise((resolve, reject) => {
           Utils.getStarWarsData('api/characters', [], resolve, reject)
         }).then(response => {
-            console.log(response[0].starships)
             loadCharacters(response)
 
           })

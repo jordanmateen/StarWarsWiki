@@ -10,17 +10,7 @@ const mapStateToProps =(state)=>{
 
 const mapDispatchToProps =(dispatch)=>{
     return {
-        loadCharacters : (characters) => dispatch({type: "GET_CHARACTERS" , characters : characters}),
-        loadPage : (trigger)=> {
-            if(trigger === "Next Page"){
-                
-                dispatch({type : "NEXT_PAGE"})
-            }else if(trigger === "Previous Page"){
-                dispatch({type : "PREVIOUS_PAGE"})
-            }
-        }
-        
-
+        loadCharacters : (characters) => dispatch({type: "GET_CHARACTERS" , characters : characters})
     }
 }
 export default connect(
