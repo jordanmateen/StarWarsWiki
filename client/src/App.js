@@ -15,7 +15,7 @@ import './styles/css/styles.css';
 class App extends Component {
   render() {
     return (
-      <div class = "background">
+      <div class = "content">
         <Navbar/>
         <Switch>
             <Route path = "/dashboard" component = {Dashboard}/>

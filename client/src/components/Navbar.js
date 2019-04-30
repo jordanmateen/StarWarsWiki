@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom'
 const Navigation =()=>{
     return(
     <div >
-        <div className ="">
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div>
+            <nav className="navvy navbar ">
                 <div className="container">
                     <NavLink to = "/dashboard">Dashboard</NavLink>
                     <NavLink to = "/characters">Characters</NavLink>

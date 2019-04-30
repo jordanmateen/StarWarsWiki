@@ -48,20 +48,21 @@ class IndividualPlanet extends Component {
             ) 
         })
         return(
-            <div>
-
-                <h1>{individualPlanet.name}</h1>
-                <div>
-                    <h3>Specifications:</h3>
-                    <ul>
-                        <li><b>Population: {individualPlanet.population}</b></li>
-                        <li><b>Diameter:   {individualPlanet.diameter}</b></li>
-                        <li><b>Climate:    {individualPlanet.climate}</b></li>
-                        <li><b>Gravity:    {individualPlanet.gravity}</b></li>
-                        <li><b>Terrain:    {individualPlanet.terrain}</b></li>
-                    </ul>
-                   <h3>Known Residents:</h3>
-                   {residents}
+            <div className = 'contentParent'>
+                <div className = 'contentChild'>
+                    <h1>{individualPlanet.name}</h1>
+                    <div>
+                        <h3>Specifications:</h3>
+                        <ul>
+                            <li><b>Population: {individualPlanet.population}</b></li>
+                            <li><b>Diameter:   {individualPlanet.diameter}</b></li>
+                            <li><b>Climate:    {individualPlanet.climate}</b></li>
+                            <li><b>Gravity:    {individualPlanet.gravity}</b></li>
+                            <li><b>Terrain:    {individualPlanet.terrain}</b></li>
+                        </ul>
+                    <h3>Known Residents:</h3>
+                    {residents}
+                    </div>
                 </div>
             </div>
         )

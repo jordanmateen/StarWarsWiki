@@ -56,25 +56,26 @@ class IndividualVehicle extends Component{
 
         console.log(individualVehicle)
         return(
-            <div>
-                <h1>{individualVehicle.name}</h1>
-                <h3>Specifications: </h3>
-                <ul>
-                    <li><b>Model: {individualVehicle.model}</b></li>
-                    <li><b>Class : {individualVehicle.vehicle_class} </b></li>
-                    <li><b>Manufacturer :    {individualVehicle.manufacturer}</b></li>
-                    <li><b>Length : {individualVehicle.length} meters </b></li>
-                    <li><b>Credits/Price:    {individualVehicle.cost_in_credits} centimeters</b></li>
-                    <li><b>Crew Size : {individualVehicle.crew}</b></li>
-                    <li><b>Passengers : {individualVehicle.passengers}</b></li>
-                    <li><b>Consumables / Food Supply : {individualVehicle.consumables} </b></li>
-                    <li><b>Cargo Capacity: {individualVehicle.cargo_capacity} </b></li>
-                 
-                </ul>
+            <div className = 'contentParent'>
+                <div className = 'contentChild'>
+                    <h1>{individualVehicle.name}</h1>
+                    <h3>Specifications: </h3>
+                    <ul>
+                        <li><b>Model: {individualVehicle.model}</b></li>
+                        <li><b>Class : {individualVehicle.vehicle_class} </b></li>
+                        <li><b>Manufacturer :    {individualVehicle.manufacturer}</b></li>
+                        <li><b>Length : {individualVehicle.length} meters </b></li>
+                        <li><b>Credits/Price:    {individualVehicle.cost_in_credits} centimeters</b></li>
+                        <li><b>Crew Size : {individualVehicle.crew}</b></li>
+                        <li><b>Passengers : {individualVehicle.passengers}</b></li>
+                        <li><b>Consumables / Food Supply : {individualVehicle.consumables} </b></li>
+                        <li><b>Cargo Capacity: {individualVehicle.cargo_capacity} </b></li>
+                    
+                    </ul>
 
-                <h3>Pilots : </h3>
-                {pilots}
-
+                    <h3>Pilots : </h3>
+                    {pilots}
+                </div>
             </div>
         )
     }
