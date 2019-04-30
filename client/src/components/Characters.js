@@ -20,9 +20,26 @@ class  Characters extends Component {
     render(){
         let { characters } = this.props
         let list = characters.map((character, i) =>{
+            let id = i+1
+
+            // few id conditions.
+            if (id > 16){
+                id = id + 1
+            }
+
+            if(id >=35){
+                id = id +1;
+            }
+
+            if(id === 89){
+                id = 35
+            }
+
+
             return (
                 <div key ={i} style = {{fontSize : '1.3em' }}>
-                    <b><CharacterListItem id = {i + 1} name = {character.name} birth_year = {character.birth_year} gender = {character.gender}/></b>
+                    
+                    <b><CharacterListItem id = {id} name = {character.name} birth_year = {character.birth_year} gender = {character.gender}/></b>
                 </div>
             )      
         })

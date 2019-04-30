@@ -1,14 +1,15 @@
 let initialState = {
     characters : [
         {
-            name:"Retriving Data...",
-            birth_year : "getting data...",
-            gender : "getting data..."
-        }],
+            name:"Loading cool people and villans...",
+            birth_year : "",
+            gender : ""
+        }
+    ],
     vehicles : [],
     planets: [
         {
-            name:"Retriving Data...",
+            name:"The Universe is a big place. One moment please...",
             
         }
     ],

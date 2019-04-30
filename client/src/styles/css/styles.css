@@ -1,3 +1,20 @@
 body {
-  background: #555151;
+  background: #242323;
+}
+.content {
+  border: 5px;
+  color: #ffd000;
+}
+.contentParent {
+  border-style: double dotted double double;
+  width: 50%;
+}
+.contentChild {
+  text-align: left;
+  display: inline-block;
+  padding: 5px;
+}
+a {
+  color: #ffd000;
+  font-size: 23px;
 }

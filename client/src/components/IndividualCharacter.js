@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PlanetListItem from './PlanetListItem'
 import VehicleListItem from './VehicleListItem'
 import axios from 'axios';
-import { version } from 'punycode';
+import Dashboard from './Dashboard'
 
 let planetCode;
 let ids = [];
@@ -71,24 +71,29 @@ class IndividualCharacter extends Component{
         })
 
         return(
-            <div>
-                <h1>{individualCharacter.name}</h1>
-                <h3>Specifications: </h3>
-                <ul>
-                    <li><b>Birth Year: {individualCharacter.birth_year}</b></li>
-                    <li><b>Gender :    {individualCharacter.gender}</b></li>
-                    <li><b>Height :    {individualCharacter.height} centimeters</b></li>
-                    <li><b>Species:    {species}</b></li>
-                </ul>
-                <div>
-                <h4>Home World:</h4>
-                <ul>
-                    <li><b><PlanetListItem  name = {homeworld} id = {planetCode}/></b></li>
-                </ul>
-               
+            <div className = 'contentParent'>
+                <div className = 'contentChild'> 
+                    <h1>{individualCharacter.name}</h1>
+                    <h3>Specifications: </h3>
+                    <ul>
+                        <li><b>Birth Year: {individualCharacter.birth_year}</b></li>
+                        <li><b>Gender :    {individualCharacter.gender}</b></li>
+                        <li><b>Height :    {individualCharacter.height} centimeters</b></li>
+                        <li><b>Species:    {species}</b></li>
+                    </ul>
+                    <div>
+                    <h4>Home World:</h4>
+                    <ul>
+                        <li><b><PlanetListItem  name = {homeworld} id = {planetCode}/></b></li>
+                    </ul>
+                
+                    </div>
+                    <h4>Vehicles:</h4>
+                    {vehicleList}
+
+                    <Dashboard name = {individualCharacter.name}/>
+                    
                 </div>
-                <h4>Vehicles:</h4>
-                {vehicleList}
             </div>
 
            

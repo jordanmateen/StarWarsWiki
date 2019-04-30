@@ -1,5 +1,37 @@
-@background-color :#555151;
+@background-color :#242323;
+@text-color : rgb(255, 208, 0);
+@border-radius: 5px;
+@center : center;
+@left : left;
+@inline : inline-block;
+@parent-border-style: double dotted double double;
+@parent-width : 50%;
+
+
 
 body{
     background :@background-color;
+}
+
+.content{
+    border: @border-radius;
+    color : @text-color
+
+}
+
+.contentParent {
+  
+    border-style : @parent-border-style;
+    width : @parent-width;
+}
+
+.contentChild {
+    text-align: @left;
+    display : @inline;
+    padding : 5px
+}
+
+a{
+    color: @text-color;
+    font-size: 23px;
 }
