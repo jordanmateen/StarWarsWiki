@@ -5,9 +5,9 @@ const Navigation =()=>{
     return(
     <div >
         <div>
-            <nav className="navvy navbar ">
+            <nav className="navvy navbar">
                 <div className="container">
-                    <NavLink to = "/dashboard">Dashboard</NavLink>
+                    <NavLink to = "/home">Home</NavLink>
                     <NavLink to = "/characters">Characters</NavLink>
                     <NavLink to = "/planets">Planets</NavLink>
                     <NavLink to = "/vehicles">Vehicles</NavLink>
