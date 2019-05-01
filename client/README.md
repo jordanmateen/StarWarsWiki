@@ -1,3 +1,13 @@
+This app is a star wars wiki fan application. It highlight all of the characters in the star wars universe along with planets and vehicle.
+
+
+## NOTE: 
+This applcation uses a express server which runs on port 2340. 
+The react front end is already proxied and connected to the server so after clone you can use 'node app' or 'nodemon app' inside the root folder.
+
+cd into the client folder in a different terminal window while the server is running. Use 'npm start' to start the react server.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
