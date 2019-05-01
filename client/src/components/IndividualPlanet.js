@@ -11,7 +11,6 @@ class IndividualPlanet extends Component {
         axios.get(`${planetID}`) //api/planets/:id
             .then( ({ data }) =>{
                 loadPlanetInfo(data)
-
                 let urls = data.residents.map( (url)=>{
                     return axios.get(url)
                 })
@@ -34,8 +33,6 @@ class IndividualPlanet extends Component {
             })
     }
     render(){
-
-        console.log(characterIdList, 'look here')
         let { individualPlanet, people } = this.props
         let residents = people.map( (name,i) =>{
             return (

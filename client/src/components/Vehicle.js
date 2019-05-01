@@ -33,13 +33,13 @@ class Starships extends Component{
         let { vehicles } = this.props
         console.log(vehicles , ' look here ')
 
-        let vehiclesList = vehicles.map( (vehicle,i)=>{
+        let vehiclesList = vehicles.length ? (vehicles.map( (vehicle,i)=>{
             return(
                 <div key ={i} style = {{fontSize : '1.3em' }}>  
                     <b><VehicleListItem id = {vehicleCode[i]} name = {vehicle.name}/></b>
                 </div>
             )
-        })
+        })):(<h4>Can't really find these in a dealership. Loading Vehicles...</h4>)
         return(
             <div>
                 <BrowserRouter>
