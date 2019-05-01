@@ -19,13 +19,13 @@ class Planets extends Component {
 
     render(){
         let { planets } =this.props
-        let planetList = planets.map( (planet, i)=>{
+        let planetList = planets.length ? (planets.map( (planet, i)=>{
             return(
                 <div key = {i} style = {{fontSize : '1.3em' }}>
                    <b> <PlanetListItem id = {i + 2} name = {planet.name}/> </b>
                 </div>
             )
-        })
+        })):(<h4>The Universe is a big place. One moment please...</h4>)
         return(
             <div>
                 <div>
