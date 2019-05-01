@@ -10,7 +10,7 @@ class CharacterListItem extends Component{
     }
 
     render(){
-        let {name, id} = this.props
+        let {name} = this.props
         return(
             <div>
                 <div onClick = {this.clickHandler.bind(this)}>

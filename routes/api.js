@@ -11,7 +11,9 @@ router.get('/planets', controller.planets)
 
 router.get('/planets/:id', controller.planets_id)
 
-// router.get('/characters/page:id',controller.paginate)
+router.get('/vehicles', controller.vehicles)
+
+router.get('/vehicles/:id', controller.vehicles_id)
 
 
 

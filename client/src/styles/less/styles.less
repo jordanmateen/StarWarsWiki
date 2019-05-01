@@ -6,6 +6,7 @@
 @inline : inline-block;
 @parent-border-style: double dotted double double;
 @parent-width : 50%;
+@pill : 50px;
 
 
 
@@ -34,4 +35,14 @@ body{
 a{
     color: @text-color;
     font-size: 23px;
+}
+
+input{
+    background-color: @background-color;
+    border-radius: @pill;
+    color:@text-color;
+    border-color: @text-color;
+    outline: none;
+    padding: 5px;
+
 }

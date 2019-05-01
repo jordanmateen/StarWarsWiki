@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import PlanetListItem from './PlanetListItem'
 import VehicleListItem from './VehicleListItem'
 import axios from 'axios';
-import Dashboard from './Dashboard'
+// import TagsContainer from '../containers/TagsContainer'
+import Tags from './Tag'
 
 let planetCode;
 let ids = [];
@@ -17,7 +18,6 @@ class IndividualCharacter extends Component{
 
         axios.get(`${characterID}`)//api/characters/:id
             .then( ({ data }) =>{
-                // console.log(data.vehicles)
                 loadCharacter(data)
                 let urls =[]
 
@@ -28,8 +28,6 @@ class IndividualCharacter extends Component{
                     let vehicleCode = parseInt(id,10)
                     return vehicleCode
                 })
-
-                console.log(urls)
                 Promise.all(urls).then( data =>{
                     let vehicleList = data.map((vehicles,i)=>{
                         return vehicles.data.name
@@ -56,8 +54,6 @@ class IndividualCharacter extends Component{
 
     render(){
         let{ individualCharacter, homeworld, species , vehicles} = this.props
-
-        console.log(vehicles)
 
         let vehicleList = vehicles.map((name,i)=>{
             return(
@@ -91,7 +87,7 @@ class IndividualCharacter extends Component{
                     <h4>Vehicles:</h4>
                     {vehicleList}
 
-                    <Dashboard name = {individualCharacter.name}/>
+                    <Tags name = {individualCharacter.name}/>
                     
                 </div>
             </div>

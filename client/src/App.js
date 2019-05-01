@@ -6,7 +6,8 @@ import CharactersContainer from './containers/CharactersContainer'
 import PlanetsContainer from './containers/PlanetsContainer'
 import IndvidualPlanetsContainer from './containers/IndividualPlanetContainer'
 import IndividualCharacterContainer from './containers/IndividualCharacterContainer'
-import Dashboard from './components/Dashboard';
+// import TagsContainer from './containers/TagsContainer';
+import Tags from './components/Tag'
 import VehicleContainer from './containers/VehicleContainer'
 import IndividualVehicleContainer from './containers/IndividualVehicleContainer'
 import './styles/css/styles.css';
@@ -15,10 +16,10 @@ import './styles/css/styles.css';
 class App extends Component {
   render() {
     return (
-      <div class = "content">
+      <div className = "content">
         <Navbar/>
         <Switch>
-            <Route path = "/dashboard" component = {Dashboard}/>
+            <Route path = "/dashboard" component = {Tags}/>
             <Route path = "/characters" component = {CharactersContainer} />
             <Route path = "/api/characters/:id" component = {IndividualCharacterContainer} />
             <Route path = "/planets" component = {PlanetsContainer} />

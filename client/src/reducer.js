@@ -1,29 +1,23 @@
 let initialState = {
-    characters : [
-        {
-            name:"Loading cool people and villans...",
-            birth_year : "",
-            gender : ""
-        }
-    ],
+    characters : [],
     vehicles : [],
-    planets: [
-        {
-            name:"The Universe is a big place. One moment please...",
-            
-        }
-    ],
+    planets: [],
     people :[],
     individualCharacter : {},
     individualPlanet : {},
     individualVehicle : {},
     homeworld: '',
     species: '',
+
+    tags : [
+        {id : 1, content : 'Tag Item'},
+        {id : 2, content : 'Jedi'}
+    ]
 }
 
 
 let reducer = (state = initialState, actions) => {
-    let { type, characters, character, homeworld, planets, species, planet , people, vehicles, vehicle} = actions
+    let { type, characters, character, homeworld, planets, species, planet , people, vehicles, vehicle, tags, newTags} = actions
 
     switch (type) {
         case "GET_CHARACTERS":
@@ -84,6 +78,18 @@ let reducer = (state = initialState, actions) => {
         return{
             ...state,
             individualVehicle : vehicle
+        }
+
+        case "ADD_TAG":
+        return{
+            ...state,
+            tags : tags
+        }
+
+        case "REMOVE_TAG":
+        return{
+            ...state,
+            tags : newTags
         }
         default:
         return {
